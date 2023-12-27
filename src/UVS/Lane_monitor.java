@@ -29,6 +29,7 @@ public class Lane_monitor {
 
         DataString p0 = new DataString();
         p0.SetName("P0");
+        p0.SetValue("signal");
         pn.PlaceList.add(p0);
 
         DataString p1 = new DataString();
@@ -52,6 +53,8 @@ public class Lane_monitor {
         grdT0.Activations.add(new Activation(t0, "P0", TransitionOperation.Move, "P0"));
         t0.GuardMappingList.add(grdT0);
 
+        t0.Delay = 0;
+        pn.Transitions.add(t0);
 
         System.out.println("Lane started \n ------------------------------");
         pn.Delay = 2000;

@@ -61,14 +61,14 @@ public class Lane {
 		green.Printable= false;
 		pn.ConstantPlaceList.add(green);
 
-		DataString P0 = new DataString();
-		P0.SetName("P0");
-		P0.SetValue(1); /// ???
-		pn.PlaceList.add(P0);
+//		DataString P0 = new DataString();
+//		P0.SetName("P0");
+//		P0.SetValue(1); /// ???
+//		pn.PlaceList.add(P0);
 
-		DataString P1 = new DataString();
-		P1.SetName("P1");
-		pn.PlaceList.add(P1);
+//		DataString P1 = new DataString();
+//		P1.SetName("P1");
+//		pn.PlaceList.add(P1);
 
 
 		
@@ -94,7 +94,7 @@ public class Lane {
 
 		GuardMapping grdT11 = new GuardMapping();
 		grdT11.condition= T1Ct3;
-		grdT11.Activations.add(new Activation(t1, "OP1", TransitionOperation.Move, "full"));// ???
+		grdT11.Activations.add(new Activation(t1, "full", TransitionOperation.SendOverNetwork, "OP1"));// ???
 		grdT11.Activations.add(new Activation(t1, "P_a1", TransitionOperation.Move, "P_a1"));
 		t1.GuardMappingList.add(grdT11);
 		

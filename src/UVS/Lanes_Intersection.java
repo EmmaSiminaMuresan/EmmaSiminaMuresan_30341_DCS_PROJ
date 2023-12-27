@@ -41,7 +41,7 @@ public class Lanes_Intersection {
 		//Implementing OP1 as an output channel connected to the controller
 		DataTransfer OP1 = new DataTransfer();
 		OP1.SetName("OP1");
-		OP1.Value = new TransferOperation("localhost", "1082", "ini"); //??? ini?? all OP1,2,3,4
+		OP1.Value = new TransferOperation("localhost", "1081", "in1"); //??? ini?? all OP1,2,3,4
 		pn.PlaceList.add(OP1);
 
 		DataCar p1 = new DataCar();
@@ -68,8 +68,8 @@ public class Lanes_Intersection {
 		//Implementing OP2 as an output channel connected to the controller
 		DataTransfer OP2 = new DataTransfer();
 		OP2.SetName("OP2");
-		OP2.Value = new TransferOperation("localhost", "1082", "ini");
-		pn.PlaceList.add(OP1);
+		OP2.Value = new TransferOperation("localhost", "1082", "in2");
+		pn.PlaceList.add(OP2);
 
 		DataCar p5 = new DataCar(); //p5.Printable = false;
 		p5.SetName("P_a2");
@@ -95,7 +95,7 @@ public class Lanes_Intersection {
 		//Implementing OP3 as an output channel connected to the controller
 		DataTransfer OP3 = new DataTransfer();
 		OP3.SetName("OP3");
-		OP3.Value = new TransferOperation("localhost", "1082", "ini");
+		OP3.Value = new TransferOperation("localhost", "1082", "in3");
 		pn.PlaceList.add(OP3);
 
 		DataCar p9 = new DataCar(); //p9.Printable = false;
@@ -122,7 +122,7 @@ public class Lanes_Intersection {
 		//Implementing OP4 as an output channel connected to the controller
 		DataTransfer OP4 = new DataTransfer();
 		OP4.SetName("OP4");
-		OP4.Value = new TransferOperation("localhost", "1082", "ini");
+		OP4.Value = new TransferOperation("localhost", "1082", "in4");
 		pn.PlaceList.add(OP4);
 
 		DataCar p13 = new DataCar();
@@ -231,7 +231,7 @@ public class Lanes_Intersection {
 
 		GuardMapping grdT1a = new GuardMapping();
 		grdT1a.condition= T1Ct3;
-		grdT1a.Activations.add(new Activation(t1, "OP1", TransitionOperation.Move, "full"));// ??? all OP1,2,3,4
+		grdT1a.Activations.add(new Activation(t1, "full", TransitionOperation.SendOverNetwork, "OP1"));// ??? all OP1,2,3,4
 		grdT1a.Activations.add(new Activation(t1, "P_a1", TransitionOperation.Move, "P_a1"));
 		t1.GuardMappingList.add(grdT1a);
 
@@ -279,7 +279,7 @@ public class Lanes_Intersection {
 
 		GuardMapping grdT3a = new GuardMapping();
 		grdT3a.condition= T3Ct3;
-		grdT3a.Activations.add(new Activation(t3, "OP2", TransitionOperation.Move, "full"));// ???
+		grdT3a.Activations.add(new Activation(t3, "full", TransitionOperation.SendOverNetwork, "OP2"));// ???
 		grdT3a.Activations.add(new Activation(t3, "P_a2", TransitionOperation.Move, "P_a2"));
 		t3.GuardMappingList.add(grdT3a);
 
@@ -326,7 +326,7 @@ public class Lanes_Intersection {
 
 		GuardMapping grdT5a = new GuardMapping();
 		grdT5a.condition= T5Ct3;
-		grdT5a.Activations.add(new Activation(t5, "OP3", TransitionOperation.Move, "full"));// ???
+		grdT5a.Activations.add(new Activation(t5, "full", TransitionOperation.SendOverNetwork, "OP3"));
 		grdT5a.Activations.add(new Activation(t5, "P_a3", TransitionOperation.Move, "P_a3"));
 		t5.GuardMappingList.add(grdT5a);
 
@@ -373,7 +373,7 @@ public class Lanes_Intersection {
 
 		GuardMapping grdT7a = new GuardMapping();
 		grdT7a.condition= T7Ct3;
-		grdT7a.Activations.add(new Activation(t7, "OP4", TransitionOperation.Move, "full"));// ???
+		grdT7a.Activations.add(new Activation(t7, "full", TransitionOperation.SendOverNetwork, "OP4"));
 		grdT7a.Activations.add(new Activation(t7, "P_a4", TransitionOperation.Move, "P_a4"));
 		t7.GuardMappingList.add(grdT7a);
 
@@ -630,7 +630,7 @@ public class Lanes_Intersection {
 
 		GuardMapping grdT21 = new GuardMapping();
 		grdT21.condition = T21Ct1;
-		grdT21.Activations.add(new Activation(t21, "P_o4Exit", TransitionOperation.Move, "PO4N")); ///SendOverNetwork??
+		grdT21.Activations.add(new Activation(t21, "P_o4Exit", TransitionOperation.SendOverNetwork, "PO4N")); ///SendOverNetwork??
 		t21.GuardMappingList.add(grdT21);
 
 		t21.Delay = 0;

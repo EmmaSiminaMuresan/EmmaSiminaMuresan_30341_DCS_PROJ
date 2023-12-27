@@ -164,11 +164,11 @@ public class RoundAbout {
 
         GuardMapping grdT7 = new GuardMapping();
         grdT7.condition= T7Ct1;
-        grdT7.Activations.add(new Activation(t7, "P1", TransitionOperation.PopElementWithTarget, "P7"));
+        grdT7.Activations.add(new Activation(t7, "P2", TransitionOperation.PopElementWithTarget, "P7"));
         t7.GuardMappingList.add(grdT7);
 
-        t4.Delay = 0;
-        pn.Transitions.add(t4);
+        t7.Delay = 0;
+        pn.Transitions.add(t7);
 
         //T8-----------------------------------------------
         PetriTransition t8 = new PetriTransition(pn);
